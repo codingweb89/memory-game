@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background: #17202A; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Cambria";
+    background-image: url(2786-min.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+}
+
+.img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    background: #cdaa7d;
+    z-index: -22;
+}
+
+.img > img {
+    width: 100%;
+    height: 100%;
+}
+
+.parent {
+    width: 650px;
+    height: 400px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.parent > span {
+    position: relative;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    padding: 20px;
+    cursor: pointer;
+    background: rgb(2, 51, 2);
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px currentColor
+}
+
+.parent > span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8b6914;
+    transition: 1.5s;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+.parent > span:hover::before {
+    background: #deb887;
+}
+
+.parent > span.opened::before {
+    transform: rotateY(180deg);
+}
+
+.parent > span.matched::before {
+    transform: rotateY(180deg);
+}
+
+.button {
+    position: absolute;
+    bottom: -10%;
+    width: 100%;
+}
+
+.button > button {
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: rgb(2, 51, 2);
+    color: #fff;
+    width: 100%;
+}
+
+.writtentex {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.writtentex {
+    font-size: 60px;
+    color: #8b6914;
+    opacity: 0.3;
+}
+
+.lives {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.lives > span {
+    color: red;
+    font-size: 2em;
+}
+
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(giphy.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.restart {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.restart button {
+    padding: 15px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 3px;
+    border: none;
+}
+
+.restart button:first-child {
+    background: #fff;
+}
+
+.restart button:last-child {
+    background: red;
+    color: #fff;
+}
+
+.display-none {
+    display: none;
+}
+
+.title {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    color: #fff;
+}
